@@ -1,23 +1,42 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  patients_list: Patients List
+  deleted_patients_list: Deleted Patients List
+  create_patient: Create Patient
+  full_name: Full Name
+  first_name: First Name
+  middle_name: Middle Name
+  last_name: Last Name
+  birthday: Birthday
+  initial: Initial
+  referred: Referred
+  treatment: Treatment
+  closed: Closed
+  not_available: Not Available
+  female: Female
+  male: Male
+  mr: MR
+  age: Age
+  gender: Gender
+  status: Status
+  location: Location
+  viewed_count: Viewed Count
+  operation: Operation
+  view: View
+  edit: Edit
+  delete: Delete
+  new_patient: New Patient
+  back: Back
+  submit: Submit
+  are_you_sure: Are You Sure?
+  enumerize:
+    patient:
+      status:
+        initial: Initial
+        referred: Referred
+        treatment: Treatment
+        closed: Closed
+      gender:
+        not_available: Not Available
+        female: Female
+        male: Male
+

@@ -1,0 +1,38 @@
+h1 = t :patients_list
+= link_to((t :patients_list), root_path, class: 'btn btn-primary')
+| &nbsp;&nbsp;&nbsp;
+= link_to((t :deleted_patients_list), root_path(deleted: true), class: 'btn btn-danger')
+hr
+a href='#{new_patient_path}' class='btn btn-info' = t :create_patient
+br
+br
+table class="table"
+  thead
+    tr
+      th = t :full_name
+      th = t :mr
+      th = t :age
+      th = t :gender
+      th = t :status
+      th = t :location
+      th = t :viewed_count
+      th = t :operation
+  tbody
+    - @patients.each do |patient|
+      <tr>
+        <td>#{patient.full_name}</td>
+        <td>MR#{patient.mr}</td>
+        <td>#{patient.age}</td>
+        <td>#{patient.gender_text}</td>
+        <td>#{patient.status_text}</td>
+        <td>#{link_to patient.location.name, location_path(patient.location.id)}</td>
+        <td>#{patient.viewed_count}</td>
+        <td>
+          = link_to((t :view), patient_path(patient), method: 'get', class: 'btn btn-primary') unless patient.deleted
+          | &nbsp;&nbsp;&nbsp;
+          = link_to((t :edit), edit_patient_path(patient), method: 'get', class: 'btn btn-info')
+          | &nbsp;&nbsp;&nbsp;
+          = link_to((t :delete), patient_path(patient), method: 'delete', class: 'btn btn-danger') unless patient.deleted
+        | </td>
+      | </tr>
+

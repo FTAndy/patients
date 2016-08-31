@@ -1,0 +1,30 @@
+  h1 = @location.name
+  table class="table"
+    thead
+      tr
+        th Fullname
+        th MR
+        th Age
+        th Gender
+        th Status
+        th Location
+        th Viewed Count
+        th Operation
+    tbody
+      - @location.patients.each do |patient|
+        <tr>
+          <td>#{patient.full_name}</td>
+          <td>MR#{patient.mr}</td>
+          <td>#{patient.age}</td>
+          <td>#{patient.gender}</td>
+          <td>#{patient.status}</td>
+          <td>#{link_to patient.location.name, location_path(patient.location.id)}</td>
+          <td>#{patient.viewed_count}</td>
+          <td>
+            = link_to "View", patient_path(patient), method: 'get', class: 'btn btn-primary' unless patient.deleted
+            | &nbsp;&nbsp;&nbsp;
+            = link_to "Edit", edit_patient_path(patient), method: 'get', class: 'btn btn-info'
+            | &nbsp;&nbsp;&nbsp;
+            = link_to "Delete", patient_path(patient), method: 'delete', class: 'btn btn-danger', onclick:"return confirm('Are you sure?')" unless patient.deleted
+          | </td>
+        | </tr>

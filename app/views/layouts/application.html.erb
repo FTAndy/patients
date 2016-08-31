@@ -7,8 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class='container' style='position: relative;'>
+<% current_path = request.original_url %>
+<%= link_to 'English', current_path.gsub(/\?(.*)/, '') + "/?locale=en", class: 'btn btn-primary translate-button' if I18n.locale.to_s == 'zh-cn'  %>
+<%= link_to '中文', current_path.gsub(/\?(.*)/, '') + "/?locale=zh-cn", class: 'btn btn-primary translate-button' if I18n.locale.to_s == 'en'  %>
 <%= yield %>
-
+</div>
 </body>
 </html>
+
+<style type="text/css">
+  .translate-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+</style>

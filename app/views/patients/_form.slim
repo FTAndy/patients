@@ -1,0 +1,37 @@
+= form_for @patient do |f|
+  div class='form-group'
+    label = t :first_name
+    = f.text_field :first_name, class: 'form-control', value: @patient.first_name, placeholder: 'First Name', required: 'required'
+  div class='form-group'
+    label = t :middle_name
+    = f.text_field :middle_name, class: 'form-control', value: @patient.middle_name, placeholder: 'Middle Name', required: 'required'
+  div class='form-group'
+    label = t :last_name
+    = f.text_field :last_name, class: 'form-control', value: @patient.last_name, placeholder: 'Last Name', required: 'required'
+  div class='form-group'
+    label = t :birthday
+    = f.date_field :date_of_birth, class: 'form-control', value: @patient.date_of_birth, required: 'required', min: '1984-05-12'
+  div class='form-group'
+    label = t :gender
+    | ｜
+    label = t :not_available
+    | &nbsp;
+    = f.radio_button("gender", 'not_available')
+    | &nbsp;
+    label = t :female
+    | &nbsp;
+    = f.radio_button("gender", 'female')
+    | &nbsp;
+    label = t :male
+    | &nbsp;
+    = f.radio_button("gender", 'male')
+
+  div class='form-group'
+    label = t :status
+    = f.select :status, options_for_select(Patient.status.options, @patient.status), {include_blank: true}, {class:'form-control', required: 'required'}
+  div class='form-group'
+    label = t :location
+    = f.select :location, options_for_select(Location.all.map {|l| [l.name, l.id]}, @patient.location_id), {selected: @patient.location.try(:name), include_blank: true}, {class:'form-control', required: 'required'}
+  button type='submit' class='btn btn-primary' = t :submit
+  | &nbsp;&nbsp;&nbsp;
+  a href='#{root_path}' class='btn btn-info' = t :back

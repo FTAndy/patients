@@ -1,0 +1,41 @@
+zh-cn:
+  patients_list: 病历列表
+  deleted_patients_list: 删除病历列表
+  create_patient: 新建病历
+  full_name: 全名
+  first_name: 名
+  middle_name: 中间名
+  last_name: 姓
+  birthday: 出生日期
+  mr: 病历号
+  age: 年龄
+  gender: 性别
+  status: 状态
+  location: 所属地
+  viewed_count: 查看次数
+  operation: 操作
+  view: 查看
+  edit: 编辑
+  delete: 删除
+  new_patient: 新建病历
+  initial: 无状态
+  referred: 检查完成
+  treatment: 治疗中
+  closed: 关闭
+  not_available: 不可知
+  female: 女
+  male: 男
+  back: 返回
+  submit: 提交
+  are_you_sure: 确定？
+  enumerize:
+    patient:
+      status:
+        initial: 无状态
+        referred: 检查完成
+        treatment: 治疗中
+        closed: 关闭
+      gender:
+        not_available: 不可知
+        female: 女
+        male: 男

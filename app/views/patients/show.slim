@@ -1,0 +1,32 @@
+  div class='row'
+    div class='col-xs-6 offset-md-3'
+      p
+        strong = t :full_name
+        | ：
+        = @patient.full_name
+      p
+        strong = t :mr
+        | ：
+        = @patient.mr
+      p
+        strong = t :age
+        | ：
+        = @patient.age
+      p
+        strong = t :gender
+        | ：
+        = @patient.gender_text
+      p
+        strong = t :status
+        | ：
+        = @patient.status_text
+      p
+        strong = t :location
+        | ：
+        = link_to @patient.location.name, location_path(@patient.location.id)
+      p
+        strong = t :viewed_count
+        | ：
+        = @patient.viewed_count
+      a href='#{root_path}' class='btn btn-primary' = t :back
+
