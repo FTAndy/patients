@@ -5,8 +5,16 @@ just a interview project
 
 and
 
-`rake db:seed`
+`bundle exec rake db:migrate`
+
+and
+
+`bundle exec rake db:seed`
 
 and 
 
 `rails s`
+
+run the test hit
+
+`bundle exec rake test`
