@@ -1,6 +1,6 @@
 class PatientsController < ApplicationController
   def index
-    if params[:deleted] == 'true'
+    if params[:deleted].to_s == 'true'
       @patients = Patient.where(deleted: true)
     else
       @patients = Patient.where(deleted: false)
@@ -16,7 +16,7 @@ class PatientsController < ApplicationController
     if @patient.save
       redirect_to root_path, notice: 'Successfully Create'
     else
-      flash.now[:notice] = 'Something Wrong'
+      flash.now[:notice] = @patient.errors.full_messages
       render :new
     end
   end
@@ -30,7 +30,7 @@ class PatientsController < ApplicationController
     if @patient.update(patient_params)
       redirect_to root_path, notice: "Successfully Update"
     else
-      flash.now[:notice] = 'Something Wrong'
+      flash.now[:notice] = @patient.errors.full_messages
       render :edit
     end
   end
@@ -51,6 +51,6 @@ class PatientsController < ApplicationController
 
   private
     def patient_params
-      params.require(:patient).permit(:first_name, :middle_name, :last_name, :date_of_birth, :gender, :location_id, :status)
+      params.fetch(:patient, Hash.new).permit(:first_name, :middle_name, :last_name, :date_of_birth, :gender, :location_id, :status)
     end
 end

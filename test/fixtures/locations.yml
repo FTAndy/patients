@@ -7,8 +7,11 @@
 #  name :string(80)       not null
 #
 
-class Location < ActiveRecord::Base
-  has_many :patients
-
-  validates :name, presence: true
-end
+Test1:
+  id: 1
+  name: Test Location 1
+  code: 1
+Test2:
+  id: 2
+  name: Test Location 2
+  code: 2

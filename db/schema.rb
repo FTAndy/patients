@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160830094826) do
+ActiveRecord::Schema.define(version: 20160831093302) do
 
   create_table "locations", force: :cascade do |t|
-    t.string "code", limit: 10, null: false
-    t.string "name", limit: 80
+    t.string "code", limit: 10
+    t.string "name", limit: 80, null: false
   end
 
   create_table "patients", force: :cascade do |t|

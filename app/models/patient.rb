@@ -9,8 +9,9 @@
 #  date_of_birth :date
 #  gender        :string
 #  status        :string           not null
-#  viewed_count  :integer
+#  viewed_count  :integer          default("0")
 #  location_id   :integer          default("1"), not null
+#  deleted       :boolean          default("f")
 #
 
 class Patient < ActiveRecord::Base

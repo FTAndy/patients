@@ -11,6 +11,7 @@
 <% current_path = request.original_url %>
 <%= link_to 'English', current_path.gsub(/\?(.*)/, '') + "/?locale=en", class: 'btn btn-primary translate-button' if I18n.locale.to_s == 'zh-cn'  %>
 <%= link_to '中文', current_path.gsub(/\?(.*)/, '') + "/?locale=zh-cn", class: 'btn btn-primary translate-button' if I18n.locale.to_s == 'en'  %>
+<%= flash.now[:notice] %>
 <%= yield %>
 </div>
 </body>

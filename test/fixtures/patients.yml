@@ -1,0 +1,25 @@
+# == Schema Information
+#
+# Table name: patients
+#
+#  id            :integer          not null, primary key
+#  first_name    :string(30)       not null
+#  middle_name   :string(10)
+#  last_name     :string(30)       not null
+#  date_of_birth :date
+#  gender        :string
+#  status        :string           not null
+#  viewed_count  :integer          default("0")
+#  location_id   :integer          default("1"), not null
+#  deleted       :boolean          default("f")
+#
+
+Patient1:
+  id: 1
+  first_name: ss
+  last_name: ss
+  gender: female
+  status: initial
+  location_id: 1
+  date_of_birth: 1994
+  viewed_count: 0
